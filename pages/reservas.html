@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="TematicCoder">
+    <meta name="robots" content="index, follow">    
+    <meta name="description" content="Reservá tu evento temático con TematicCoder. Casamientos gamer, cumpleaños e-sports, fiestas grandes en Buenos Aires.">
+    <meta name="keywords" content="reservas eventos temáticos, reservar casamiento gamer, fiesta e-sports Buenos Aires">
+    <title>Reservas - TematicCoder</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" type="image/png" href="../img/icon.png">
+    <link rel="preload" href="../img/logo-tematiccoder.png" as="image">
+</head>
+<body>
+    <!--NavBar General para toda la pagina-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
+        <div class="container-fluid">
+            <a class="navbar-brand d-none d-lg-block me-4 fs-4 fw-bold" href="../index.html">TematicCoder</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+
+        <div class="collapse navbar-collapse justify-content-center" id="navbarText">
+            <ul class="navbar-nav mb-2 mb-lg-0 gap-4">
+                <li class="nav-item mx-2">
+                    <a class="nav-link fs-5 fw-semibold px-4 py-3 rounded-pill nav-link-custom" aria-current="page" href="../index.html">Inicio</a>
+                </li>
+                <li class="nav-item mx-2">
+                    <a class="nav-link fs-5 fw-semibold px-4 py-3 rounded-pill nav-link-custom" href="servicios.html">Servicios</a>
+                </li>
+                <li class="nav-item mx-2">
+                    <a class="nav-link fs-5 fw-semibold px-4 py-3 rounded-pill nav-link-custom" href="nosotros.html">Nosotros</a>
+                </li>
+                <li class="nav-item mx-2">
+                    <a class="nav-link fs-5 fw-semibold px-4 py-3 rounded-pill nav-link-custom" href="contacto.html">Contacto</a>
+                </li>
+                <li class="nav-item mx-2">
+                    <a class="nav-link fs-5 fw-semibold px-4 py-3 rounded-pill nav-link-custom" href="reservas.html">Reservas</a>
+                </li>
+            </ul>
+        </div>
+            <a class="navbar-brand d-block d-lg-none fs-3 fw-bold">TematicCoder</a>
+            <a class="navbar-brand fs-2 fw-bold me-3" href="../index.html">
+                <img src="../img/logo-tematiccoder.png" alt="Logo TematicCoder" width="40" height="40" class="rounded-circle"></a>
+        </div>
+    </nav>
+
+    <!--Formulario de contacto para reservas-->
+
+    <section class="container my-5 py-5" id="reservas">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-xl-6">
+                <div class="card shadow-lg rounded-4 border-0 overflow-hidden">
+                <div id="alertExito" class="alert alert-success alert-dismissible fade shadow-sm border-0 d-none mb-4" role="alert">
+                    ✅ <strong>¡Reserva enviada!</strong> Te contactamos en 24hs por WhatsApp.
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+                <div class="card-header bg-danger bg-gradient text-white p-4 text-center rounded-top-4">
+                    <h2 class="h3 fw-bold mb-2">Inicia la reserva de tu evento temático</h2>
+                    <p class="mb-0 lead opacity-98 fs-6">Completa los siguientes datos para contactarte en 24hs</p>
+                </div>
+                <div class="card-body p-4">
+                    <form id="formReservas">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold text-dark mb-2" for="form-nombre">Nombre y Apellido</label>
+                                <input type="text" name="nombre" id="nombre-form" class="form-control form-control-lg rounded-3 shadow-sm" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold text-dark mb-2" for="form-mail">Email</label>
+                                <input type="email" name="email" id="email-form" class="form-control form-control-lg rounded-3 shadow-sm" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold text-dark mb-2" for="form-num">Whatsapp</label>
+                                <input type="tel" name="whatsapp" id="num-form" class="form-control form-control-lg rounded-3 shadow-sm soloNumeros" placeholder="+54 11-1111-1111" maxlength="10" pattern="[0-9]{1-10}" inputmode="numeric" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold text-dark mb-2" for="form-date">Fecha solicitada</label>
+                                <input type="date" name="fecha" id="date-form" class="form-control form-control-lg rounded-3 shadow-sm" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold text-dark mb-2" for="evento-tipe">Tipo de evento</label>
+                                <select class="form-select form-select-lg rounded-3 shadow-sm" name="evento" id="evento-tipe" required>
+                                    <option value="">Selecciona tu evento</option>
+                                    <option value="casamiento">Casamiento</option>
+                                    <option value="graduacion">Graduación</option>
+                                    <option value="deportivo">Deportivo</option>
+                                    <option value="convencion">Convención</option>
+                                    <option value="otro">Otro</option>
+                                </select>
+                            </div>
+                            <div class="col-12"> <!--Check con redireccion a los terminos y condiciones-->
+                                <div class="form-check ps-5 border-start border-4 border-danger rounded-3 p-4 mb-4">
+                                    <input class="form-check-input shadow-sm rounded-3 me-3" type="checkbox" id="terminos" style="width: 1.5rem; height: 1.5rem; border: 3px solid #dc3545 !important" required>
+                                    <label class="form-check-label fs-6 fw-semibold lh-lg " for="terminos">
+                                        <a href="./terminos.html" class="text-danger fw-bold fs-6 text-decoration-none"> Terminos y condiciones</a>
+                                    </label>                                                        
+                                </div>
+                            </div>
+                            <div class="col-12 text-center">
+                                <button type="submit" class="btn btn-danger btn-lg w-100 rounded-3 shadow-lg px-5 py-3 fw-bold">Reservar Ahora</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Boton de whatsapp-->
+
+    <a href="https://wa.me/5491111111111?text=¡Hola!%20Quiero%20más%20info" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!--Scrip de Boostrap-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!--Scrip del form para solucion de "bugs""-->
+    <!--Fechas desde hoy en adelante-->
+    <script> 
+        const fechaInput = document.querySelector('input[name="fecha"]');
+        const hoy = new Date().toISOString().split('T')[0];
+        fechaInput.setAttribute('min', hoy);
+    </script>
+    <!--Numeros telefonicos unicamente-->
+    <script>
+        const inputTel = document.querySelector('.soloNumeros');
+
+        // 1. input: borra letras al instante
+        inputTel.addEventListener('input', function(e) {
+        this.value = this.value.replace(/\D/g, '');
+        if (this.value.length > 10) {
+            this.value = this.value.slice(0, 10);
+        }
+        });
+
+        // 2. keypress: BLOQUEA teclas de letras DESDE el inicio
+        inputTel.addEventListener('keypress', function(event) {
+        const char = String.fromCharCode(event.keyCode || event.which);
+        if (!/[0-9]/.test(char)) {
+        event.preventDefault();}
+        });
+
+        // 3. paste: también solo números
+        inputTel.addEventListener('paste', function(e) {
+        e.preventDefault();
+        const paste = (e.clipboardData || window.clipboardData).getData('text');
+        const numeros = paste.replace(/\D/g, '');
+        this.value = numeros;
+        });
+    </script>
+    <!--Aviso de enviado sin direccion real para ejemplo-->
+    <script>
+        document.getElementById('formReservas').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const alert = document.getElementById('alertExito');
+        alert.classList.remove('d-none');
+        alert.classList.add('show');
+        this.reset();
+        });
+    </script>
+
+    <!--Pie de pagina / Con EasterEgg-->
+
+    <footer class="bg-dark text-white py-5 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start mb-3">
+                    <h5 class="fw-bold text-danger mb-3">TematicCoder</h5>
+                    <p class="mb-0 opacity-75">Eventos únicos para ocasiones inolvidables.</p>
+                    <p class="mb-0 opacity-75">TematicCoder no promueve la venta de información a terceros</p>
+                    <p class="mb-0 opacity-75">Para mas información comunicarse al +54 11 1111-1111</p>
+                    <p class="mb-0 opacity-75">Nuestro mail de contacto: support@tematiccoder@gmail.com</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end mb-3 position-relative">
+                    <p class="mb-3">Argentina, Buenos Aires</p>
+                    <small class="opacity-75 d-block mb-5">&copy; 2026 TematicCoder. Todos los derechos reservados.</small>
+                    <a href="https://homers-webpage.vercel.app/" target="_blank" class="easter-egg position-absolute bottom-0 end-0 mb-2 me-2">
+                    <img src="../img/egg.png" alt="Easter Egg TematicCoder" width="25" height="25"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
